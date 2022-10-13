@@ -34,8 +34,8 @@ export default function Header() {
                   priority
                   src="/logo.png"
                   alt="logo"
-                  width={190}
-                  height={45}
+                  width={150}
+                  height={35}
                   quality={100}
                   layout="fixed"
                   style={{ flex: 0 }}
@@ -74,10 +74,22 @@ export default function Header() {
                     <a href="">Bạn bè</a>
                   </li>
                   <li className="header__category-sublist-item">
-                    <a href="">Tất cả</a>
+                    <a href="">Vợ/ Bạn gái</a>
                   </li>
                   <li className="header__category-sublist-item">
-                    <a href="">Bạn bè</a>
+                    <a href="">Chồng/ Bạn trai</a>
+                  </li>
+                  <li className="header__category-sublist-item">
+                    <a href="">Mẹ</a>
+                  </li>
+                  <li className="header__category-sublist-item">
+                    <a href="">Bố</a>
+                  </li>
+                  <li className="header__category-sublist-item">
+                    <a href="">Trẻ em</a>
+                  </li>
+                  <li className="header__category-sublist-item">
+                    <a href="">Anh/ chị/ em</a>
                   </li>
                 </ul>
               </li>
@@ -102,8 +114,10 @@ export default function Header() {
                 </Link>
               </li>
             </ul>
-            <i className="fa-solid fa-house header__icon"></i>
-            <i className="fa-solid fa-cart-shopping header__icon"></i>
+            <div className="header__group-icon">
+              <i className="fa-solid fa-house header__icon"></i>
+              <i className="fa-solid fa-cart-shopping header__icon"></i>
+            </div>
           </div>
         </div>
       </div>

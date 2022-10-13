@@ -1,0 +1,35 @@
+// `xl` applies to large devices (desktops, less than 1200px)
+@include media-breakpoint-down(xl) {
+  .header__category-list {
+    display: none;
+  }
+
+  .header__bottom {
+    justify-content: space-between;
+  }
+
+  .header__location {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    select {
+      flex: 0.8;
+    }
+  }
+}
+
+// `lg` applies to medium devices (tablets, less than 992px)
+@include media-breakpoint-down(lg) {
+  .header__top-wrapper {
+    display: none;
+  }
+}
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@include media-breakpoint-down(md) {
+  .header__location {
+    display: none;
+  }
+}
