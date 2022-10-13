@@ -1,0 +1,145 @@
+.header {
+  $text-white-color: #ffffff;
+  $text-black-color: #111111;
+  position: relative;
+
+  &__top-wrapper {
+    background-color: $primary-color;
+  }
+
+  &__top {
+    display: flex;
+  }
+
+  &__top-list {
+    margin-left: auto;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__top-list-item {
+    padding: 5px 5px;
+
+    a {
+      color: $text-white-color;
+      text-decoration: none;
+    }
+  }
+
+  &__free-delivery-quote {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $text-white-color;
+    padding: 5px 0;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+  }
+
+  &__location {
+    margin-left: 5px;
+
+    span {
+      margin-right: 5px;
+    }
+
+    select {
+      width: 200px;
+      padding: 5px 10px;
+      outline: $primary-color;
+
+      &:focus {
+        border: 2px solid $primary-color;
+      }
+    }
+  }
+
+  &__category-list {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+  }
+
+  &__category-list-item {
+    position: relative;
+
+    a {
+      color: $text-black-color;
+      text-decoration: none;
+      padding: 0px 10px;
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &__category-list-item:hover &__category-sublist {
+    display: flex;
+  }
+
+  &__icon {
+    font-size: 1rem;
+    margin: 0px 5px;
+  }
+
+  &__bottom-wrapper {
+    border-bottom: 1px solid #ddd;
+  }
+
+  &__category-sublist {
+    position: absolute;
+    top: 150%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ddd;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    z-index: 2;
+    display: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid;
+      border-color: transparent transparent $primary-color transparent;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      z-index: -1;
+    }
+  }
+
+  &__category-sublist-item {
+    width: 50%;
+
+    a {
+      padding: 10px 5px;
+
+      &:hover {
+        background-color: $primary-color;
+        color: $text-white-color;
+      }
+    }
+  }
+}
