@@ -1,5 +1,6 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import url("http://fonts.cdnfonts.com/css/menlo");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&family=IBM+Plex+Sans&display=swap");
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css";
 
 $primary-color: rgba(247, 159, 142);
@@ -16,6 +17,9 @@ $border-color: #e5e7eb;
 @import "./product-card.scss";
 @import "./breakline.scss";
 @import "./product-section.scss";
+@import "./footer.scss";
+@import "./button.scss";
+@import "./input.scss";
 
 * {
   padding: 0;
@@ -26,9 +30,9 @@ $border-color: #e5e7eb;
 body {
   overflow-x: hidden;
   font-size: 62.5%;
-  // font-family: "Menlo", sans-serif;
-  // font-family: "IBM Plex Sans", sans-serif;
+  // font-family: "Fira Sans", sans-serif;
   font-family: "Menlo", sans-serif;
+  // font-family: "IBM Plex Sans", sans-serif;
 }
 
 i.fa-solid {

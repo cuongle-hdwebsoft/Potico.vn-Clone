@@ -1,0 +1,17 @@
+.btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  font-size: 13px;
+
+  &--primary {
+    background-color: $primary-color;
+    color: $text-white-color;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $text-white-color;
+    }
+  }
+}

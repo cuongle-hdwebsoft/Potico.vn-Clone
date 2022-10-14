@@ -1,0 +1,106 @@
+footer {
+  background-color: rgba(255, 239, 240);
+  padding: 20px 25px;
+  margin-top: 20px;
+
+  h5 {
+    font-size: 15px;
+    color: rgba(48, 45, 111);
+    font-weight: bold;
+  }
+
+  h6 {
+    font-size: 11px;
+    color: rgba(48, 45, 111);
+    font-weight: bold;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    a {
+      text-decoration: none;
+      margin-bottom: 5px;
+      display: block;
+      color: #3d3c77;
+
+      &:hover {
+        color: #3d3c77;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .social-icon {
+    color: #fff;
+    overflow: hidden;
+    height: 35px;
+    width: 35px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px;
+  }
+
+  .fb-icon {
+    background-color: #3b579d;
+    text-shadow: 0 0 #2d4278, 1px 1px #2d4278, 2px 2px #2d4278, 3px 3px #2d4278,
+      4px 4px #2d4278, 5px 5px #2d4278, 6px 6px #2d4278, 7px 7px #2d4278,
+      8px 8px #2d4278, 9px 9px #2d4278, 10px 10px #2d4278, 11px 11px #2d4278,
+      12px 12px #2d4278, 13px 13px #2d4278, 14px 14px #2d4278, 15px 15px #2d4278,
+      16px 16px #2d4278, 17px 17px #2d4278, 18px 18px #2d4278, 19px 19px #2d4278,
+      20px 20px #2d4278, 21px 21px #2d4278, 22px 22px #2d4278, 23px 23px #2d4278,
+      24px 24px #2d4278, 25px 25px #2d4278, 26px 26px #2d4278, 27px 27px #2d4278,
+      28px 28px #2d4278, 29px 29px #2d4278, 30px 30px #2d4278;
+  }
+
+  .insta-icon {
+    background: #f6417e;
+    text-shadow: 0 0 #e42564, 1px 1px #e42564, 2px 2px #e42564, 3px 3px #e42564,
+      4px 4px #e42564, 5px 5px #e42564, 6px 6px #e42564, 7px 7px #e42564,
+      8px 8px #e42564, 9px 9px #e42564, 10px 10px #e42564, 11px 11px #e42564,
+      12px 12px #e42564, 13px 13px #e42564, 14px 14px #e42564, 15px 15px #e42564,
+      16px 16px #e42564, 17px 17px #e42564, 18px 18px #e42564, 19px 19px #e42564,
+      20px 20px #e42564, 21px 21px #e42564, 22px 22px #e42564, 23px 23px #e42564,
+      24px 24px #e42564, 25px 25px #e42564, 26px 26px #e42564, 27px 27px #e42564,
+      28px 28px #e42564, 29px 29px #e42564, 30px 30px #e42564;
+  }
+
+  .toptop-icon {
+    background: #010101;
+    text-shadow: 0 0 #444141, 1px 1px #444141, 2px 2px #444141, 3px 3px #444141,
+      4px 4px #444141, 5px 5px #444141, 6px 6px #444141, 7px 7px #444141,
+      8px 8px #444141, 9px 9px #444141, 10px 10px #444141, 11px 11px #444141,
+      12px 12px #444141, 13px 13px #444141, 14px 14px #444141, 15px 15px #444141,
+      16px 16px #444141, 17px 17px #444141, 18px 18px #444141, 19px 19px #444141,
+      20px 20px #444141, 21px 21px #444141, 22px 22px #444141, 23px 23px #444141,
+      24px 24px #444141, 25px 25px #444141, 26px 26px #444141, 27px 27px #444141,
+      28px 28px #444141, 29px 29px #444141, 30px 30px #444141;
+  }
+
+  .printest-icon {
+    background: #cb2026;
+    text-shadow: 0 0 #9f191e, 1px 1px #9f191e, 2px 2px #9f191e, 3px 3px #9f191e,
+      4px 4px #9f191e, 5px 5px #9f191e, 6px 6px #9f191e, 7px 7px #9f191e,
+      8px 8px #9f191e, 9px 9px #9f191e, 10px 10px #9f191e, 11px 11px #9f191e,
+      12px 12px #9f191e, 13px 13px #9f191e, 14px 14px #9f191e, 15px 15px #9f191e,
+      16px 16px #9f191e, 17px 17px #9f191e, 18px 18px #9f191e, 19px 19px #9f191e,
+      20px 20px #9f191e, 21px 21px #9f191e, 22px 22px #9f191e, 23px 23px #9f191e,
+      24px 24px #9f191e, 25px 25px #9f191e, 26px 26px #9f191e, 27px 27px #9f191e,
+      28px 28px #9f191e, 29px 29px #9f191e, 30px 30px #9f191e;
+  }
+
+  .linkedin-icon {
+    background: #0e76a8;
+    text-shadow: 0 0 #2d4278, 1px 1px #2d4278, 2px 2px #2d4278, 3px 3px #2d4278,
+      4px 4px #2d4278, 5px 5px #2d4278, 6px 6px #2d4278, 7px 7px #2d4278,
+      8px 8px #2d4278, 9px 9px #2d4278, 10px 10px #2d4278, 11px 11px #2d4278,
+      12px 12px #2d4278, 13px 13px #2d4278, 14px 14px #2d4278, 15px 15px #2d4278,
+      16px 16px #2d4278, 17px 17px #2d4278, 18px 18px #2d4278, 19px 19px #2d4278,
+      20px 20px #2d4278, 21px 21px #2d4278, 22px 22px #2d4278, 23px 23px #2d4278,
+      24px 24px #2d4278, 25px 25px #2d4278, 26px 26px #2d4278, 27px 27px #2d4278,
+      28px 28px #2d4278, 29px 29px #2d4278, 30px 30px #2d4278;
+  }
+}

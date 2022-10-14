@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 import Header from "./Header";
 
 interface Props {
@@ -10,6 +11,7 @@ export default function MainLayout({ children }: Props) {
     <React.Fragment>
       <Header></Header>
       {children}
+      <Footer></Footer>
     </React.Fragment>
   );
 }
