@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CardProduct from "../components/ProductCard";
+import ProductSection from "../components/ProductSection";
+import data from "../data";
 
 const Home: NextPage = () => {
   return (
@@ -54,12 +56,76 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="col-lg-3 d-none d-lg-block col-xl-3">
-            <CardProduct></CardProduct>
+            <CardProduct item={data[0]}></CardProduct>
           </div>
         </div>
       </div>
 
       <div className="breakline"></div>
+
+      <div className="container">
+        <ProductSection
+          title="Bán chạy nhất Hà Nội"
+          startIndex={0}
+          total={12}
+        ></ProductSection>
+      </div>
+
+      <div className="container">
+        <ProductSection
+          title="Chúc Mừng Ngày Phụ Nữ Việt Nam 20.10"
+          startIndex={12}
+          total={12}
+        ></ProductSection>
+      </div>
+
+      <div className="container">
+        <ProductSection
+          title="Tốt nghiệp"
+          startIndex={24}
+          total={6}
+        ></ProductSection>
+      </div>
+
+      <div className="container">
+        <ProductSection
+          title="Sản Phẩm Mới Hà Nội"
+          startIndex={30}
+          total={6}
+        ></ProductSection>
+      </div>
+
+      <div className="container">
+        <ProductSection
+          title="Giỏ hoa thanh lịch"
+          startIndex={36}
+          total={6}
+        ></ProductSection>
+      </div>
+
+      <div className="container">
+        <ProductSection
+          title="Hộp hoa độc đáo"
+          startIndex={42}
+          total={6}
+        ></ProductSection>
+      </div>
+
+      <div className="container">
+        <ProductSection
+          title="Quà tặng sinh nhật Hà Nội"
+          startIndex={48}
+          total={6}
+        ></ProductSection>
+      </div>
+
+      <div className="container">
+        <ProductSection
+          title="Quà tặng ý nghĩa"
+          startIndex={54}
+          total={12}
+        ></ProductSection>
+      </div>
     </MainLayout>
   );
 };

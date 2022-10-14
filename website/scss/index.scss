@@ -7,7 +7,7 @@ $text-white-color: #ffffff;
 $text-black-color: #111111;
 $text-gray-color: rgba(129, 138, 145);
 
-$border-color: rgba(129, 138, 145);
+$border-color: #e5e7eb;
 
 @import "./header.scss";
 @import "./responsive.scss";
@@ -15,6 +15,7 @@ $border-color: rgba(129, 138, 145);
 @import "./banner.scss";
 @import "./product-card.scss";
 @import "./breakline.scss";
+@import "./product-section.scss";
 
 * {
   padding: 0;
@@ -36,4 +37,8 @@ i.fa-solid {
 
 img {
   object-fit: contain;
+}
+
+.more-products {
+  color: $primary-color;
 }
