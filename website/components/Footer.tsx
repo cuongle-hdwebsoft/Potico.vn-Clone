@@ -94,7 +94,7 @@ export default function Footer() {
         <div className="d-flex align-items-center justify-content-between mt-3 flex-column flex-sm-row">
           <p className="mb-0">© 2022 CÔNG TY TNHH FLOWER STORE VIỆT NAM</p>
 
-          <div className="d-flex">
+          <div className="d-flex mt-3">
             <img
               style={{ width: 30, height: 30, margin: "0px 5px" }}
               src="/payment/momo.png"
@@ -122,7 +122,7 @@ export default function Footer() {
             />
           </div>
 
-          <div className="d-flex mt-2">
+          <div className="d-flex mt-3">
             <a className="social-icon fb-icon">
               <i className="fa-brands fa-facebook-f"></i>
             </a>
