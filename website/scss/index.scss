@@ -20,6 +20,8 @@ $border-color: #e5e7eb;
 @import "./footer.scss";
 @import "./button.scss";
 @import "./input.scss";
+@import "./campaign.scss";
+@import "./select.scss";
 
 * {
   padding: 0;
@@ -45,4 +47,8 @@ img {
 
 .more-products {
   color: $primary-color;
+}
+
+h1 {
+  font-size: 30px;
 }

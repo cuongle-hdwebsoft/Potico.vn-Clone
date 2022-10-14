@@ -58,12 +58,12 @@ export default function Header() {
             </div>
             <ul className="header__category-list">
               <li className="header__category-list-item">
-                <Link passHref href="/">
+                <Link passHref href="/campaign/1">
                   <a href="">Ngày phụ nữ Việt Nam</a>
                 </Link>
               </li>
               <li className="header__category-list-item">
-                <Link passHref href="/">
+                <Link passHref href="/campaign/1">
                   <a href="">Sinh nhật</a>
                 </Link>
                 <ul className="header__category-sublist">
@@ -94,22 +94,22 @@ export default function Header() {
                 </ul>
               </li>
               <li className="header__category-list-item">
-                <Link passHref href="/">
+                <Link passHref href="/campaign/1">
                   <a href="">Dịp</a>
                 </Link>
               </li>
               <li className="header__category-list-item">
-                <Link passHref href="/">
+                <Link passHref href="/campaign/1">
                   <a href="">Loại hoa & cây</a>
                 </Link>
               </li>
               <li className="header__category-list-item">
-                <Link passHref href="/">
+                <Link passHref href="/campaign/1">
                   <a href="">Loại sản phẩm</a>
                 </Link>
               </li>
               <li className="header__category-list-item">
-                <Link passHref href="/">
+                <Link passHref href="/campaign/1">
                   <a href="">Sản phẩm khác</a>
                 </Link>
               </li>
