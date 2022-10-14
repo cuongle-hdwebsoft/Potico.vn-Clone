@@ -5,7 +5,46 @@
 // `xl` applies to large devices (desktops, less than 1200px)
 @include media-breakpoint-down(xl) {
   .header__category-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: #fff;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
     display: none;
+    padding: 0;
+
+    &.active {
+      display: block;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 30px;
+      font-size: 30px;
+    }
+  }
+
+  .header__category-list-item {
+    a {
+      padding: 10px 0px;
+      border-bottom: 1px solid $border-color;
+    }
+  }
+
+  .header__category-sublist {
+    top: 100%;
+
+    &::before {
+      border-color: transparent transparent $primary-color transparent;
+    }
+
+    &:after {
+      top: -30px;
+    }
   }
 
   .header__bottom {
@@ -26,12 +65,16 @@
   .banner {
     display: none;
   }
+
+  .position-xl-relative {
+    position: relative;
+  }
 }
 
 // `lg` applies to medium devices (tablets, less than 992px)
 @include media-breakpoint-down(lg) {
   .header__top-wrapper {
-    display: none;
+    display: block;
   }
 }
 

@@ -1,16 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="header">
       <div className="header__top-wrapper">
         <div className="container ">
           <div className="header__top">
-            <div className="header__free-delivery-quote">
+            <div className="header__free-delivery-quote  position-xl-relative">
               Miễn phí vận chuyển nội thành TP.HCM & Hà Nội.
             </div>
-            <ul className="header__top-list">
+            <ul className="header__top-list d-none d-lg-flex">
               <li className="header__top-list-item">
                 <a href="">Theo dõi đơn hàng</a>
               </li>
@@ -56,7 +59,7 @@ export default function Header() {
                 <option>Các tỉnh khác</option>
               </select>
             </div>
-            <ul className="header__category-list">
+            <ul className={`header__category-list ${isOpen ? "active" : ""}`}>
               <li className="header__category-list-item">
                 <Link passHref href="/campaign/1">
                   <a href="">Ngày phụ nữ Việt Nam</a>
@@ -113,10 +116,17 @@ export default function Header() {
                   <a href="">Sản phẩm khác</a>
                 </Link>
               </li>
+              <li className="close d-block d-xl-none">
+                <i onClick={() => setIsOpen(false)} className="fa fa-close"></i>
+              </li>
             </ul>
             <div className="header__group-icon">
               <i className="fa-solid fa-house header__icon"></i>
               <i className="fa-solid fa-cart-shopping header__icon"></i>
+              <i
+                className="fa fa-bars header__icon d-inline-block d-xl-none"
+                onClick={() => setIsOpen(true)}
+              ></i>
             </div>
           </div>
         </div>
