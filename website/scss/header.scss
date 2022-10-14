@@ -1,6 +1,4 @@
 .header {
-  $text-white-color: #ffffff;
-  $text-black-color: #111111;
   position: relative;
 
   &__top-wrapper {
@@ -91,6 +89,7 @@
   &__icon {
     font-size: 1rem;
     margin: 0px 5px;
+    color: $text-gray-color;
   }
 
   &__bottom-wrapper {

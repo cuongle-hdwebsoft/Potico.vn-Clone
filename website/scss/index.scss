@@ -1,11 +1,20 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+@import url("http://fonts.cdnfonts.com/css/menlo");
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css";
 
 $primary-color: rgba(247, 159, 142);
+$text-white-color: #ffffff;
+$text-black-color: #111111;
+$text-gray-color: rgba(129, 138, 145);
 
-@import "../components/Header/Header.scss";
+$border-color: rgba(129, 138, 145);
+
+@import "./header.scss";
 @import "./responsive.scss";
+@import "./carousel.scss";
+@import "./banner.scss";
+@import "./product-card.scss";
+@import "./breakline.scss";
 
 * {
   padding: 0;
@@ -18,9 +27,13 @@ body {
   font-size: 62.5%;
   // font-family: "Menlo", sans-serif;
   // font-family: "IBM Plex Sans", sans-serif;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Menlo", sans-serif;
 }
 
 i.fa-solid {
   font-family: "Font Awesome 6 Free";
+}
+
+img {
+  object-fit: contain;
 }

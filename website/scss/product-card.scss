@@ -1,0 +1,40 @@
+.product-card {
+  border: 1px solid $border-color;
+  padding: 10px;
+
+  &__img {
+    width: 100%;
+    height: 200px;
+    max-width: 194px;
+    margin: auto;
+    display: block;
+  }
+
+  &__real-price {
+    color: $primary-color;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  &__rating-start {
+    margin-right: 5px;
+  }
+
+  & del {
+    color: $text-gray-color;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__price {
+    flex: 1;
+  }
+
+  &__rating {
+    flex: 1;
+  }
+}
