@@ -22,6 +22,9 @@ $border-color: #e5e7eb;
 @import "./input.scss";
 @import "./campaign.scss";
 @import "./select.scss";
+@import "./breadcumb.scss";
+@import "./product-detail.scss";
+@import "./tabs.scss";
 
 * {
   padding: 0;
@@ -51,4 +54,14 @@ img {
 
 h1 {
   font-size: 30px;
+}
+
+.primary-text-color {
+  color: $primary-color !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  background-color: transparent;
+  color: $primary-color !important;
 }

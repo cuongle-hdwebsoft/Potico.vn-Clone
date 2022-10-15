@@ -1,0 +1,141 @@
+.product-detail {
+  margin-top: 20px;
+
+  h1 {
+    font-size: 25px;
+    position: relative;
+    font-weight: bold;
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 1.5px;
+      width: 150px;
+      top: 100%;
+      left: 0;
+      background-color: $border-color;
+    }
+  }
+
+  .small-list-images {
+    img {
+      border: 2px solid #fff;
+
+      &.active {
+        border: 2px solid $primary-color;
+      }
+    }
+  }
+
+  .large-image {
+    max-width: 350px;
+  }
+
+  .group-star,
+  .price {
+    flex: 1;
+    // font-size: 13px;
+  }
+
+  .price {
+    text-align: right;
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  .actual-price {
+    color: $primary-color;
+  }
+
+  .discount-price {
+    color: $text-gray-color;
+  }
+
+  .description {
+    &__title {
+      margin-bottom: 5px;
+      color: #999999;
+    }
+    &__item {
+      margin-bottom: 15px;
+    }
+  }
+
+  .border-outside {
+    border-width: 10px 8px 10px 8px;
+    border-color: $primary-color;
+    border-style: solid;
+    border-radius: 4px;
+  }
+
+  .variant-product-selection {
+    display: flex;
+    align-items: center;
+    border: 2px solid $border-color;
+    padding: 0px 10px;
+    border-radius: 4px;
+
+    img {
+      width: 40px;
+    }
+
+    &.active {
+      border: 2px solid $primary-color;
+    }
+  }
+
+  .amount-input {
+    max-width: 50px;
+  }
+
+  .preview-item {
+    &__wrapper {
+      cursor: pointer;
+      position: relative;
+      margin: 10px;
+      border: 1px solid $border-color;
+      padding: 10px;
+      transition: 0.3s ease all;
+    }
+
+    &__image {
+      width: 100%;
+      max-width: 117px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    &__title {
+      color: $primary-color;
+      width: 80px;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      display: block;
+      margin: auto;
+    }
+
+    &__price {
+      color: $text-gray-color;
+      text-align: center;
+    }
+
+    &__more-info {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      background-color: $primary-color;
+      color: #fff;
+      font-size: 13px;
+
+      width: 25px;
+      height: 30px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

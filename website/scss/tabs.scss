@@ -1,0 +1,21 @@
+.tab {
+  &__header {
+    display: flex;
+    margin-bottom: 5px;
+
+    &-item {
+      border: 2px solid $border-color;
+      padding: 2px 15px;
+      margin-right: 5px;
+      border-radius: 4px;
+      color: $text-gray-color;
+      cursor: pointer;
+
+      &.active {
+        border: 2px solid $primary-color;
+        background-color: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+}

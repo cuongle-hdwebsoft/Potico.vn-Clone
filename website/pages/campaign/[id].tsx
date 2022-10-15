@@ -3,6 +3,8 @@ import MainLayout from "../../components/MainLayout";
 import ProductSection from "../../components/ProductSection";
 
 export default function index() {
+  console.log("render");
+
   return (
     <MainLayout>
       <div className="campaign">
