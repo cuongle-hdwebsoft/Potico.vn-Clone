@@ -6,12 +6,13 @@ import Tabs from "../../components/Tabs";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Alert from "../../components/Alert";
+import Card from "../../components/Card";
 
 export default function ProductDetail() {
   const [previewImageIndex, setPreviewImageIndex] = useState(1);
   const [amount, setAmount] = useState<string>("1");
-
-  console.log("render");
+  const [activeHour, setActiveHour] = useState(0);
 
   return (
     <MainLayout>
@@ -150,205 +151,326 @@ export default function ProductDetail() {
                     </div>
                   </div>
                 </div>
-
                 <div className="description__item">
                   <div className="description__title">Chọn thêm sản phẩm</div>
-                  <Tabs defaultActiveTabIndex={0}>
-                    <Tabs.TabItem index={0} title="Tất cả">
-                      <Slider slidesToShow={4} slidesToScroll={4}>
-                        {Array.from({ length: 11 }).map((item, index) => {
-                          return (
-                            <div
-                              className="preview-item"
-                              key={`tab-item-image-0-${index}`}
-                            >
-                              <div className="preview-item__wrapper">
-                                <div className="preview-item__title">
-                                  Product title
-                                </div>
-                                <img
-                                  className="preview-item__image"
-                                  style={{ width: "100%" }}
-                                  src={`/product-detail/accessories/tab0/${
-                                    index + 1
-                                  }.jpg `}
-                                  alt=""
-                                />
-                                <div className="preview-item__price">
-                                  19.000 đ
-                                </div>
-                                <div className="preview-item__more-info">
-                                  <i className="fa-solid fa-circle-info"></i>
-                                </div>
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </Slider>
-                    </Tabs.TabItem>
-                    <Tabs.TabItem index={1} title="Bánh kem">
-                      <Slider slidesToShow={1} slidesToScroll={1}>
-                        {Array.from({ length: 1 }).map((item, index) => {
-                          return (
-                            <div
-                              className="preview-item"
-                              key={`tab-item-image-1-${index}`}
-                            >
-                              <div className="preview-item__wrapper">
-                                <div className="preview-item__title">
-                                  Product title
-                                </div>
-                                <img
-                                  className="preview-item__image"
-                                  style={{ width: "100%" }}
-                                  src={`/product-detail/accessories/tab1/${
-                                    index + 1
-                                  }.jpg `}
-                                  alt=""
-                                />
-                                <div className="preview-item__price">
-                                  19.000 đ
-                                </div>
-                                <div className="preview-item__more-info">
-                                  <i className="fa-solid fa-circle-info"></i>
+                  <div className="description__content">
+                    <Tabs defaultActiveTabIndex={0}>
+                      <Tabs.TabItem index={0} title="Tất cả">
+                        <Slider slidesToShow={4} slidesToScroll={4}>
+                          {Array.from({ length: 11 }).map((item, index) => {
+                            return (
+                              <div
+                                className="preview-item"
+                                key={`tab-item-image-0-${index}`}
+                              >
+                                <div className="preview-item__wrapper">
+                                  <div className="preview-item__title">
+                                    Product title
+                                  </div>
+                                  <img
+                                    className="preview-item__image"
+                                    style={{ width: "100%" }}
+                                    src={`/product-detail/accessories/tab0/${
+                                      index + 1
+                                    }.jpg `}
+                                    alt=""
+                                  />
+                                  <div className="preview-item__price">
+                                    19.000 đ
+                                  </div>
+                                  <div className="preview-item__more-info">
+                                    <i className="fa-solid fa-circle-info"></i>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          );
-                        })}
-                      </Slider>
-                    </Tabs.TabItem>
-                    <Tabs.TabItem index={2} title="Thiệp">
-                      <Slider slidesToShow={4} slidesToScroll={4}>
-                        {Array.from({ length: 6 }).map((item, index) => {
-                          return (
-                            <div
-                              className="preview-item"
-                              key={`tab-item-image-2-${index}`}
-                            >
-                              <div className="preview-item__wrapper">
-                                <div className="preview-item__title">
-                                  Product title
-                                </div>
-                                <img
-                                  className="preview-item__image"
-                                  style={{ width: "100%" }}
-                                  src={`/product-detail/accessories/tab2/${
-                                    index + 1
-                                  }.jpg `}
-                                  alt=""
-                                />
-                                <div className="preview-item__price">
-                                  19.000 đ
-                                </div>
-                                <div className="preview-item__more-info">
-                                  <i className="fa-solid fa-circle-info"></i>
-                                </div>
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </Slider>
-                    </Tabs.TabItem>
-                    <Tabs.TabItem index={3} title="Gấu bông">
-                      <Slider slidesToShow={1} slidesToScroll={1}>
-                        {Array.from({ length: 1 }).map((item, index) => {
-                          return (
-                            <div
-                              className="preview-item"
-                              key={`tab-item-image-2-${index}`}
-                            >
-                              <div className="preview-item__wrapper">
-                                <div className="preview-item__title">
-                                  Product title
-                                </div>
-                                <img
-                                  className="preview-item__image"
-                                  style={{ width: "100%" }}
-                                  src={`/product-detail/accessories/tab3/${
-                                    index + 1
-                                  }.jpg `}
-                                  alt=""
-                                />
-                                <div className="preview-item__price">
-                                  19.000 đ
-                                </div>
-                                <div className="preview-item__more-info">
-                                  <i className="fa-solid fa-circle-info"></i>
+                            );
+                          })}
+                        </Slider>
+                      </Tabs.TabItem>
+                      <Tabs.TabItem index={1} title="Bánh kem">
+                        <Slider slidesToShow={1} slidesToScroll={1}>
+                          {Array.from({ length: 1 }).map((item, index) => {
+                            return (
+                              <div
+                                className="preview-item"
+                                key={`tab-item-image-1-${index}`}
+                              >
+                                <div className="preview-item__wrapper">
+                                  <div className="preview-item__title">
+                                    Product title
+                                  </div>
+                                  <img
+                                    className="preview-item__image"
+                                    style={{ width: "100%" }}
+                                    src={`/product-detail/accessories/tab1/${
+                                      index + 1
+                                    }.jpg `}
+                                    alt=""
+                                  />
+                                  <div className="preview-item__price">
+                                    19.000 đ
+                                  </div>
+                                  <div className="preview-item__more-info">
+                                    <i className="fa-solid fa-circle-info"></i>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          );
-                        })}
-                      </Slider>
-                    </Tabs.TabItem>
-                    <Tabs.TabItem index={4} title="Khác">
-                      <Slider slidesToShow={1} slidesToScroll={1}>
-                        {Array.from({ length: 1 }).map((item, index) => {
-                          return (
-                            <div
-                              className="preview-item"
-                              key={`tab-item-image-5-${index}`}
-                            >
-                              <div className="preview-item__wrapper">
-                                <div className="preview-item__title">
-                                  Product title
-                                </div>
-                                <img
-                                  className="preview-item__image"
-                                  style={{ width: "100%" }}
-                                  src={`/product-detail/accessories/tab4/${
-                                    index + 1
-                                  }.jpg `}
-                                  alt=""
-                                />
-                                <div className="preview-item__price">
-                                  19.000 đ
-                                </div>
-                                <div className="preview-item__more-info">
-                                  <i className="fa-solid fa-circle-info"></i>
-                                </div>
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </Slider>
-                    </Tabs.TabItem>
-                    <Tabs.TabItem index={5} title="Banner">
-                      <Slider slidesToShow={1} slidesToScroll={1}>
-                        {Array.from({ length: 1 }).map((item, index) => {
-                          return (
-                            <div
-                              className="preview-item"
-                              key={`tab-item-image-6-${index}`}
-                            >
-                              <div className="preview-item__wrapper">
-                                <div className="preview-item__title">
-                                  Product title
-                                </div>
-                                <img
-                                  className="preview-item__image"
-                                  style={{ width: "100%" }}
-                                  src={`/product-detail/accessories/tab5/${
-                                    index + 1
-                                  }.jpg `}
-                                  alt=""
-                                />
-                                <div className="preview-item__price">
-                                  19.000 đ
-                                </div>
-                                <div className="preview-item__more-info">
-                                  <i className="fa-solid fa-circle-info"></i>
+                            );
+                          })}
+                        </Slider>
+                      </Tabs.TabItem>
+                      <Tabs.TabItem index={2} title="Thiệp">
+                        <Slider slidesToShow={4} slidesToScroll={4}>
+                          {Array.from({ length: 6 }).map((item, index) => {
+                            return (
+                              <div
+                                className="preview-item"
+                                key={`tab-item-image-2-${index}`}
+                              >
+                                <div className="preview-item__wrapper">
+                                  <div className="preview-item__title">
+                                    Product title
+                                  </div>
+                                  <img
+                                    className="preview-item__image"
+                                    style={{ width: "100%" }}
+                                    src={`/product-detail/accessories/tab2/${
+                                      index + 1
+                                    }.jpg `}
+                                    alt=""
+                                  />
+                                  <div className="preview-item__price">
+                                    19.000 đ
+                                  </div>
+                                  <div className="preview-item__more-info">
+                                    <i className="fa-solid fa-circle-info"></i>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          );
-                        })}
-                      </Slider>
-                    </Tabs.TabItem>
-                  </Tabs>
+                            );
+                          })}
+                        </Slider>
+                      </Tabs.TabItem>
+                      <Tabs.TabItem index={3} title="Gấu bông">
+                        <Slider slidesToShow={1} slidesToScroll={1}>
+                          {Array.from({ length: 1 }).map((item, index) => {
+                            return (
+                              <div
+                                className="preview-item"
+                                key={`tab-item-image-2-${index}`}
+                              >
+                                <div className="preview-item__wrapper">
+                                  <div className="preview-item__title">
+                                    Product title
+                                  </div>
+                                  <img
+                                    className="preview-item__image"
+                                    style={{ width: "100%" }}
+                                    src={`/product-detail/accessories/tab3/${
+                                      index + 1
+                                    }.jpg `}
+                                    alt=""
+                                  />
+                                  <div className="preview-item__price">
+                                    19.000 đ
+                                  </div>
+                                  <div className="preview-item__more-info">
+                                    <i className="fa-solid fa-circle-info"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </Slider>
+                      </Tabs.TabItem>
+                      <Tabs.TabItem index={4} title="Khác">
+                        <Slider slidesToShow={1} slidesToScroll={1}>
+                          {Array.from({ length: 1 }).map((item, index) => {
+                            return (
+                              <div
+                                className="preview-item"
+                                key={`tab-item-image-5-${index}`}
+                              >
+                                <div className="preview-item__wrapper">
+                                  <div className="preview-item__title">
+                                    Product title
+                                  </div>
+                                  <img
+                                    className="preview-item__image"
+                                    style={{ width: "100%" }}
+                                    src={`/product-detail/accessories/tab4/${
+                                      index + 1
+                                    }.jpg `}
+                                    alt=""
+                                  />
+                                  <div className="preview-item__price">
+                                    19.000 đ
+                                  </div>
+                                  <div className="preview-item__more-info">
+                                    <i className="fa-solid fa-circle-info"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </Slider>
+                      </Tabs.TabItem>
+                      <Tabs.TabItem index={5} title="Banner">
+                        <Slider slidesToShow={1} slidesToScroll={1}>
+                          {Array.from({ length: 1 }).map((item, index) => {
+                            return (
+                              <div
+                                className="preview-item"
+                                key={`tab-item-image-6-${index}`}
+                              >
+                                <div className="preview-item__wrapper">
+                                  <div className="preview-item__title">
+                                    Product title
+                                  </div>
+                                  <img
+                                    className="preview-item__image"
+                                    style={{ width: "100%" }}
+                                    src={`/product-detail/accessories/tab5/${
+                                      index + 1
+                                    }.jpg `}
+                                    alt=""
+                                  />
+                                  <div className="preview-item__price">
+                                    19.000 đ
+                                  </div>
+                                  <div className="preview-item__more-info">
+                                    <i className="fa-solid fa-circle-info"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </Slider>
+                      </Tabs.TabItem>
+                    </Tabs>
+                  </div>
                 </div>
               </div>
+
+              <Alert
+                description={
+                  <p style={{ marginBottom: 0 }}>
+                    Khám phá ngay những sản phẩm Chúc Mừng Ngày Phụ Nữ Việt Nam
+                    20.10{" "}
+                    <Link href="/" passHref>
+                      <a href="">tại đây!</a>
+                    </Link>
+                  </p>
+                }
+              ></Alert>
+
+              <div className="description">
+                <div className="description__item">
+                  <div className="description__title">
+                    Chọn ngày giao hàng: (Giảm thêm đến 20% cho 1 số ngày giao
+                    hàng)
+                  </div>
+                  <div className="description__content">
+                    <div className="d-flex">
+                      <div className="w-25">
+                        <Card active={true}>
+                          <div
+                            style={{
+                              height: 50,
+                              overflow: "hidden",
+                              textAlign: "center",
+                            }}
+                          >
+                            <p>15 tháng 10</p>
+                            <p>HÔM NAY</p>
+                          </div>
+                        </Card>
+                      </div>
+                      <div className="w-25">
+                        <Card>
+                          <div
+                            style={{
+                              height: 50,
+                              overflow: "hidden",
+                              textAlign: "center",
+                            }}
+                          >
+                            <p>15 tháng 10</p>
+                            <p>NGÀY MAI</p>
+                          </div>
+                        </Card>
+                      </div>
+                      <div className="w-25">
+                        <Card>
+                          <div
+                            style={{
+                              height: 50,
+                              overflow: "hidden",
+                              textAlign: "center",
+                            }}
+                          >
+                            <p>15 tháng 10</p>
+                            <p>THỨ 2</p>
+                          </div>
+                        </Card>
+                      </div>
+                      <div className="w-25">
+                        <Card>
+                          <div
+                            style={{
+                              height: 50,
+                              overflow: "hidden",
+                              textAlign: "center",
+
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <i className="fa-solid fa-calendar-days"></i>
+                          </div>
+                        </Card>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="description__item">
+                  <div className="description__title">
+                    Chọn thời gian giao hàng
+                  </div>
+                  <div className="description__content">
+                    <div className="d-flex flex-wrap">
+                      {Array.from({ length: 12 }).map((_, index) => (
+                        <div key={`card-${index}`} className="w-25 p-1">
+                          <Card
+                            onClick={() => setActiveHour(index)}
+                            active={index === activeHour}
+                          >
+                            <div
+                              style={{
+                                fontWeight: "bold",
+                                textAlign: "center",
+                              }}
+                            >
+                              {index}h-{index + 2}h
+                            </div>
+                          </Card>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p className="total-price">
+                <span>Tổng cộng: </span>
+                <span>449,000 ₫</span>
+              </p>
+
+              <button className="btn btn--primary btn--outlined btn--large me-2">
+                Thêm vào giỏ hàng
+              </button>
+              <button className="btn btn--primary btn--large">Mua ngay</button>
             </div>
           </div>
         </div>

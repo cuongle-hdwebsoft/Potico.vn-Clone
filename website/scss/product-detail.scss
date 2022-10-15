@@ -138,4 +138,16 @@
       align-items: center;
     }
   }
+
+  .total-price {
+    span:nth-child(0) {
+      font-size: 13px;
+      color: $text-gray-color;
+    }
+
+    span:nth-child(1) {
+      font-size: 13px;
+      color: $primary-color;
+    }
+  }
 }
