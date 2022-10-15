@@ -10,7 +10,12 @@ export default function Tabs({ children, defaultActiveTabIndex }: Tabs) {
 
   const items = children
     ? children.map((i) => {
-        if (i && i.type.name === "TabItem") {
+        if (
+          (i &&
+            i.type.name === "TabItem" &&
+            process.env.NODE_ENV === "development") ||
+          process.env.NODE_ENV === "production"
+        ) {
           return React.cloneElement(i, {
             activeIndex: activeIndex ? activeIndex : 0,
           });
@@ -18,12 +23,12 @@ export default function Tabs({ children, defaultActiveTabIndex }: Tabs) {
           return null;
         }
       })
-    : null;
+    : [];
 
   return (
     <div className="tab">
       <div className="tab__header d-flex overflow-x-scroll">
-        {items?.map((i, index) => (
+        {items.map((i, index) => (
           <div
             onClick={() => setActiveIndex(i?.props.index)}
             key={`tab__header-item-${index}`}

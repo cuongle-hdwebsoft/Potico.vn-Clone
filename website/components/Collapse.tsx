@@ -6,14 +6,20 @@ interface Collapse {
 
 export default function Collapse({ children }: Collapse) {
   const items = children.map((item) => {
-    if (item?.type?.name === "CollapseItem") {
+    if (
+      (process.env.NODE_ENV === "development" &&
+        item?.type?.name === "CollapseItem") ||
+      process.env.NODE_ENV === "production"
+    ) {
       return item;
     } else {
-      return null;
+      return "";
     }
   });
 
-  return <div className="collapse-component">{items}</div>;
+  console.log("items", items, children);
+
+  return <div className="collapse-component">{children}</div>;
 }
 
 interface CollapseItem {
