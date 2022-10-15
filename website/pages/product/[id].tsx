@@ -19,7 +19,7 @@ export default function ProductDetail() {
   const [previewImageIndex, setPreviewImageIndex] = useState(1);
   const [amount, setAmount] = useState<string>("1");
   const [activeHour, setActiveHour] = useState(0);
-  const [isOpenMoreInfoModal, setIsOpenMoreInfoModal] = useState(true);
+  const [isOpenMoreInfoModal, setIsOpenMoreInfoModal] = useState(false);
 
   return (
     <MainLayout>
