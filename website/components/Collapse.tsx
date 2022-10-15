@@ -17,8 +17,6 @@ export default function Collapse({ children }: Collapse) {
     }
   });
 
-  console.log("items", items, children);
-
   return <div className="collapse-component">{children}</div>;
 }
 

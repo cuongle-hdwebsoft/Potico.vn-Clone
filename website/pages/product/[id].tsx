@@ -9,12 +9,17 @@ import "slick-carousel/slick/slick-theme.css";
 import Alert from "../../components/Alert";
 import Card from "../../components/Card";
 import Collapse from "../../components/Collapse";
-import useResponsive from "../../hooks/useResponsive";
+import dynamic from "next/dynamic";
+
+const Modal = dynamic(() => import("../../components/Modal"), {
+  ssr: false,
+});
 
 export default function ProductDetail() {
   const [previewImageIndex, setPreviewImageIndex] = useState(1);
   const [amount, setAmount] = useState<string>("1");
   const [activeHour, setActiveHour] = useState(0);
+  const [isOpenMoreInfoModal, setIsOpenMoreInfoModal] = useState(true);
 
   return (
     <MainLayout>
@@ -227,7 +232,10 @@ export default function ProductDetail() {
                                   <div className="preview-item__price">
                                     19.000 đ
                                   </div>
-                                  <div className="preview-item__more-info">
+                                  <div
+                                    className="preview-item__more-info"
+                                    onClick={() => setIsOpenMoreInfoModal(true)}
+                                  >
                                     <i className="fa-solid fa-circle-info"></i>
                                   </div>
                                 </div>
@@ -273,7 +281,10 @@ export default function ProductDetail() {
                                   <div className="preview-item__price">
                                     19.000 đ
                                   </div>
-                                  <div className="preview-item__more-info">
+                                  <div
+                                    className="preview-item__more-info"
+                                    onClick={() => setIsOpenMoreInfoModal(true)}
+                                  >
                                     <i className="fa-solid fa-circle-info"></i>
                                   </div>
                                 </div>
@@ -319,7 +330,10 @@ export default function ProductDetail() {
                                   <div className="preview-item__price">
                                     19.000 đ
                                   </div>
-                                  <div className="preview-item__more-info">
+                                  <div
+                                    className="preview-item__more-info"
+                                    onClick={() => setIsOpenMoreInfoModal(true)}
+                                  >
                                     <i className="fa-solid fa-circle-info"></i>
                                   </div>
                                 </div>
@@ -365,7 +379,10 @@ export default function ProductDetail() {
                                   <div className="preview-item__price">
                                     19.000 đ
                                   </div>
-                                  <div className="preview-item__more-info">
+                                  <div
+                                    className="preview-item__more-info"
+                                    onClick={() => setIsOpenMoreInfoModal(true)}
+                                  >
                                     <i className="fa-solid fa-circle-info"></i>
                                   </div>
                                 </div>
@@ -411,7 +428,10 @@ export default function ProductDetail() {
                                   <div className="preview-item__price">
                                     19.000 đ
                                   </div>
-                                  <div className="preview-item__more-info">
+                                  <div
+                                    className="preview-item__more-info"
+                                    onClick={() => setIsOpenMoreInfoModal(true)}
+                                  >
                                     <i className="fa-solid fa-circle-info"></i>
                                   </div>
                                 </div>
@@ -457,7 +477,10 @@ export default function ProductDetail() {
                                   <div className="preview-item__price">
                                     19.000 đ
                                   </div>
-                                  <div className="preview-item__more-info">
+                                  <div
+                                    className="preview-item__more-info"
+                                    onClick={() => setIsOpenMoreInfoModal(true)}
+                                  >
                                     <i className="fa-solid fa-circle-info"></i>
                                   </div>
                                 </div>
@@ -596,6 +619,74 @@ export default function ProductDetail() {
           </div>
         </div>
       </div>
+
+      <Modal
+        width={300}
+        isOpen={isOpenMoreInfoModal}
+        content={
+          <div>
+            <Slider arrows={false}>
+              <div>
+                <img
+                  className="w-100"
+                  alt=""
+                  src="/product-detail/detail-modal-img/1.jpg"
+                />
+              </div>
+              <div>
+                <img
+                  className="w-100"
+                  alt=""
+                  src="/product-detail/detail-modal-img/2.jpg"
+                />
+              </div>
+              <div>
+                <img
+                  className="w-100"
+                  alt=""
+                  src="/product-detail/detail-modal-img/3.jpg"
+                />
+              </div>
+              <div>
+                <img
+                  className="w-100"
+                  alt=""
+                  src="/product-detail/detail-modal-img/4.jpg"
+                />
+              </div>
+            </Slider>
+
+            <div
+              style={{ maxHeight: 100, overflowY: "scroll" }}
+              className="small-description my-3"
+            >
+              <p>
+                Thêm phần đáng yêu cho món quà của bạn với chú gấu bông xinh xắn
+                trong màu áo hoặc nâu hoặc xanh.
+              </p>
+              <p>Kích thước gấu: cao 30cm.</p>
+              <p>* Màu áo ngẫu nhiên</p>
+              <p>* Các Quận Nội thành áp dụng miễn phí vận chuyển:</p>
+              <p>
+                / Hà Nội: Quận Ba Đình, Hai Bà Trưng, Hoàn Kiếm, Hoàng Mai, Tây
+                Hồ, Thanh Xuân, Đống Đa, Cầu Giấy, Bắc Từ Liêm
+              </p>
+              <p>
+                / Tp.HCM: Quận 1,10, 11, 3, 4, 5, 6, 7, 8, Bình Thạnh, Phú
+                Nhuận, Tân Bình, Gò Vấp, Tân Phú
+              </p>
+            </div>
+
+            <button className="btn btn--primary m-auto d-block ">
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+        }
+        title="Gấu Bông Đáng Yêu"
+        onClose={() => {
+          setIsOpenMoreInfoModal(false);
+        }}
+      ></Modal>
     </MainLayout>
   );
 }
