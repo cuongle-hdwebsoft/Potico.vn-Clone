@@ -8,6 +8,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Alert from "../../components/Alert";
 import Card from "../../components/Card";
+import Collapse from "../../components/Collapse";
+import useResponsive from "../../hooks/useResponsive";
 
 export default function ProductDetail() {
   const [previewImageIndex, setPreviewImageIndex] = useState(1);
@@ -29,8 +31,8 @@ export default function ProductDetail() {
           </div>
           <div className="row mt-3">
             <div className="col-12 col-lg-6">
-              <div className="d-md-flex justify-content-start">
-                <div className="small-list-images d-flex flex-column gap-2">
+              <div className="d-flex flex-column-reverse flex-sm-row justify-content-start mb-3">
+                <div className="small-list-images d-flex flex-row flex-sm-column gap-2 overflow-x-scroll overflow-x-sm-hidden mt-3 mt-sm-0">
                   {Array.from({ length: 4 }).map((_, index) => {
                     return (
                       <img
@@ -51,9 +53,42 @@ export default function ProductDetail() {
                   className="large-image ms-3 d-block"
                 />
               </div>
+
+              <Collapse>
+                <Collapse.Item title="Mô tả">
+                  <p>
+                    Bó Hoa Mon Bel Amour mang gam màu hồng đầy trang nhã và
+                    duyên dáng của hoa hồng với sự kết hợp của màu xanh lá tai
+                    lừa và màu tím của hoa sao. Đây sẽ là món quà bất ngờ và
+                    hoàn hảo dành tặng người thương, gia đình hoặc bạn bè.
+                  </p>
+                  <p>Bó Hoa Mon Bel Amour (Cơ Bản) bao gồm:</p>
+                  <p>- 10 Bông Hoa Hồng</p>
+                  <p>- Cành Tai Lừa & Các loại Hoa và Lá khác</p>
+                  <p>Bó Hoa Mon Bel Amour (Đặc Biệt) bao gồm:</p>
+                  <p>- 26 Bông Hoa Hồng</p>
+                  <p>- Cành Tai Lừa & Các loại Hoa và Lá khác</p>
+                  <p>
+                    * Do mỗi sản phẩm đều được làm thủ công nên sẽ có chút khác
+                    biệt so với hình ảnh sẵn có trên website.
+                  </p>
+                  <p>*Các Quận Nội thành áp dụng miễn phí vận chuyển:</p>
+                  <p>
+                    / Hà Nội: Quận Ba Đình, Hai Bà Trưng, Hoàn Kiếm, Hoàng Mai,
+                    Tây Hồ, Thanh Xuân, Đống Đa, Cầu Giấy, Bắc Từ Liêm
+                  </p>
+                  <p>
+                    / Tp.HCM: Quận 1,10, 11, 3, 4, 5, 6, 7, 8, Bình Thạnh, Phú
+                    Nhuận, Tân Bình Gò Vấp, Tân Phú
+                  </p>
+                </Collapse.Item>
+                <Collapse.Item title="Đánh giá">
+                  Chưa có đánh giá nào
+                </Collapse.Item>
+              </Collapse>
             </div>
             <div className="col-12 col-lg-6">
-              <h1>MON BEL AMOUR</h1>
+              <h1 className="mt-3 mt-sm-0">MON BEL AMOUR</h1>
 
               <div className="d-flex justify mt-3">
                 <div className="group-star">
@@ -156,7 +191,21 @@ export default function ProductDetail() {
                   <div className="description__content">
                     <Tabs defaultActiveTabIndex={0}>
                       <Tabs.TabItem index={0} title="Tất cả">
-                        <Slider slidesToShow={4} slidesToScroll={4}>
+                        <Slider
+                          responsive={[
+                            {
+                              breakpoint: 768, // < 768
+                              settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                dots: false,
+                                arrows: false,
+                              },
+                            },
+                          ]}
+                          slidesToShow={4}
+                          slidesToScroll={4}
+                        >
                           {Array.from({ length: 11 }).map((item, index) => {
                             return (
                               <div
@@ -188,7 +237,21 @@ export default function ProductDetail() {
                         </Slider>
                       </Tabs.TabItem>
                       <Tabs.TabItem index={1} title="Bánh kem">
-                        <Slider slidesToShow={1} slidesToScroll={1}>
+                        <Slider
+                          responsive={[
+                            {
+                              breakpoint: 768, // < 768
+                              settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                dots: false,
+                                arrows: false,
+                              },
+                            },
+                          ]}
+                          slidesToShow={1}
+                          slidesToScroll={1}
+                        >
                           {Array.from({ length: 1 }).map((item, index) => {
                             return (
                               <div
@@ -220,7 +283,21 @@ export default function ProductDetail() {
                         </Slider>
                       </Tabs.TabItem>
                       <Tabs.TabItem index={2} title="Thiệp">
-                        <Slider slidesToShow={4} slidesToScroll={4}>
+                        <Slider
+                          responsive={[
+                            {
+                              breakpoint: 768, // < 768
+                              settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                dots: false,
+                                arrows: false,
+                              },
+                            },
+                          ]}
+                          slidesToShow={4}
+                          slidesToScroll={4}
+                        >
                           {Array.from({ length: 6 }).map((item, index) => {
                             return (
                               <div
@@ -252,7 +329,21 @@ export default function ProductDetail() {
                         </Slider>
                       </Tabs.TabItem>
                       <Tabs.TabItem index={3} title="Gấu bông">
-                        <Slider slidesToShow={1} slidesToScroll={1}>
+                        <Slider
+                          responsive={[
+                            {
+                              breakpoint: 768, // < 768
+                              settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                dots: false,
+                                arrows: false,
+                              },
+                            },
+                          ]}
+                          slidesToShow={1}
+                          slidesToScroll={1}
+                        >
                           {Array.from({ length: 1 }).map((item, index) => {
                             return (
                               <div
@@ -284,7 +375,21 @@ export default function ProductDetail() {
                         </Slider>
                       </Tabs.TabItem>
                       <Tabs.TabItem index={4} title="Khác">
-                        <Slider slidesToShow={1} slidesToScroll={1}>
+                        <Slider
+                          responsive={[
+                            {
+                              breakpoint: 768, // < 768
+                              settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                dots: false,
+                                arrows: false,
+                              },
+                            },
+                          ]}
+                          slidesToShow={1}
+                          slidesToScroll={1}
+                        >
                           {Array.from({ length: 1 }).map((item, index) => {
                             return (
                               <div
@@ -316,7 +421,21 @@ export default function ProductDetail() {
                         </Slider>
                       </Tabs.TabItem>
                       <Tabs.TabItem index={5} title="Banner">
-                        <Slider slidesToShow={1} slidesToScroll={1}>
+                        <Slider
+                          responsive={[
+                            {
+                              breakpoint: 768, // < 768
+                              settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                dots: false,
+                                arrows: false,
+                              },
+                            },
+                          ]}
+                          slidesToShow={1}
+                          slidesToScroll={1}
+                        >
                           {Array.from({ length: 1 }).map((item, index) => {
                             return (
                               <div
@@ -371,8 +490,8 @@ export default function ProductDetail() {
                     hàng)
                   </div>
                   <div className="description__content">
-                    <div className="d-flex">
-                      <div className="w-25">
+                    <div className="d-flex flex-column flex-sm-row">
+                      <div className="w-100 w-sm-25 mb-2 mb-sm-0">
                         <Card active={true}>
                           <div
                             style={{
@@ -386,7 +505,7 @@ export default function ProductDetail() {
                           </div>
                         </Card>
                       </div>
-                      <div className="w-25">
+                      <div className="w-100 w-sm-25 mb-2 mb-sm-0">
                         <Card>
                           <div
                             style={{
@@ -400,7 +519,7 @@ export default function ProductDetail() {
                           </div>
                         </Card>
                       </div>
-                      <div className="w-25">
+                      <div className="w-100 w-sm-25 mb-2 mb-sm-0">
                         <Card>
                           <div
                             style={{
@@ -414,7 +533,7 @@ export default function ProductDetail() {
                           </div>
                         </Card>
                       </div>
-                      <div className="w-25">
+                      <div className="w-100 w-sm-25 mb-2 mb-sm-0">
                         <Card>
                           <div
                             style={{
@@ -441,7 +560,7 @@ export default function ProductDetail() {
                   <div className="description__content">
                     <div className="d-flex flex-wrap">
                       {Array.from({ length: 12 }).map((_, index) => (
-                        <div key={`card-${index}`} className="w-25 p-1">
+                        <div key={`card-${index}`} className="w-50 w-sm-25 p-1">
                           <Card
                             onClick={() => setActiveHour(index)}
                             active={index === activeHour}
@@ -467,10 +586,12 @@ export default function ProductDetail() {
                 <span>449,000 ₫</span>
               </p>
 
-              <button className="btn btn--primary btn--outlined btn--large me-2">
+              <button className="btn btn--primary btn--outlined btn--large me-2 w-oxs-100 mb-2 mb-sm-0">
                 Thêm vào giỏ hàng
               </button>
-              <button className="btn btn--primary btn--large">Mua ngay</button>
+              <button className="btn btn--primary btn--large w-oxs-100">
+                Mua ngay
+              </button>
             </div>
           </div>
         </div>

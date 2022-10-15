@@ -20,11 +20,9 @@ export default function Tabs({ children, defaultActiveTabIndex }: Tabs) {
       })
     : null;
 
-  console.log(items?.length);
-
   return (
     <div className="tab">
-      <div className="tab__header">
+      <div className="tab__header d-flex overflow-x-scroll">
         {items?.map((i, index) => (
           <div
             onClick={() => setActiveIndex(i?.props.index)}

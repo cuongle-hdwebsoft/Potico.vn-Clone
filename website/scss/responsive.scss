@@ -91,4 +91,41 @@
 
 // `sm` applies to x-small devices (portrait phones, less than 576px)
 @include media-breakpoint-down(sm) {
+  .overflow-x-scroll {
+    overflow-x: scroll;
+  }
+
+  .overflow-y-scroll {
+    overflow-y: scroll;
+  }
+
+  .w-sm-100 {
+    width: 100% !important;
+  }
+}
+
+// `sm` applies to x-small devices (portrait phones, greater than 576px)
+@include media-breakpoint-up(sm) {
+  .overflow-x-sm-scroll {
+    overflow-x: scroll;
+  }
+
+  .overflow-x-sm-hidden {
+    overflow-x: hidden;
+  }
+
+  .w-sm-25 {
+    width: 25% !important;
+  }
+}
+
+// 0 -> 575.98
+@include media-breakpoint-only(xs) {
+  .w-oxs-100 {
+    width: 100%;
+  }
+}
+
+// 576 -> 767.98
+@include media-breakpoint-only(sm) {
 }
