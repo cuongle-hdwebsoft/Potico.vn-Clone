@@ -5,28 +5,36 @@ interface Collapse {
 }
 
 export default function Collapse({ children }: Collapse) {
-  const items = children.map((item) => {
+  const [activeIndex] = useState(0);
+  const items = children.map((item, index) => {
     if (
       (process.env.NODE_ENV === "development" &&
         item?.type?.name === "CollapseItem") ||
       process.env.NODE_ENV === "production"
     ) {
-      return item;
+      return React.cloneElement(item, { activeIndex, index });
     } else {
       return "";
     }
   });
 
-  return <div className="collapse-component">{children}</div>;
+  return <div className="collapse-component">{items}</div>;
 }
 
 interface CollapseItem {
   children: string | number | boolean | JSX.Element | JSX.Element[];
   title?: string;
+  activeIndex?: number;
+  index?: number;
 }
 
-const CollapseItem = ({ children, title }: CollapseItem) => {
-  const [isOpen, setIsOpen] = useState(false);
+const CollapseItem = ({
+  children,
+  title,
+  activeIndex,
+  index,
+}: CollapseItem) => {
+  const [isOpen, setIsOpen] = useState(activeIndex === index);
 
   return (
     <div
