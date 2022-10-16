@@ -126,7 +126,25 @@ export default function Header() {
               </li>
             </ul>
             <div className="header__group-icon">
-              <i className="fa-solid fa-magnifying-glass header__icon d-inline-block large"></i>
+              <DropDown
+                dropdown={
+                  <div className="d-flex align-items-center pt-3">
+                    <input
+                      style={{ flexGrow: 1 }}
+                      className="input py-1 ps-1"
+                      placeholder="Nhập từ khóa tìm kiếm"
+                    />
+                    <button
+                      className="btn btn--primary btn--sm"
+                      style={{ height: 26 }}
+                    >
+                      Tìm
+                    </button>
+                  </div>
+                }
+              >
+                <i className="fa-solid fa-magnifying-glass header__icon d-inline-block large"></i>
+              </DropDown>
               <DropDown dropdown={<CartDropdown></CartDropdown>}>
                 <i className="fa-solid fa-cart-shopping header__icon"></i>
               </DropDown>

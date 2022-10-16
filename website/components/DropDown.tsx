@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import * as uuid from "uuid";
 
 interface Props {
   children: any;
@@ -7,10 +8,14 @@ interface Props {
 
 export default function DropDown({ children, dropdown }: Props) {
   const [isOpenCartDropdown, setIsOpenCartDropdown] = useState(false);
+  const id = useRef(uuid.v4());
+  const dropdownFallbackClassName = "dropdown__fallback-" + id.current;
 
   const handleClose = () => {
     setIsOpenCartDropdown(false);
-    const domEl = document.querySelector(".dropdown__fallback") as HTMLElement;
+    const domEl = document.querySelector(
+      "." + dropdownFallbackClassName
+    ) as HTMLElement;
 
     if (domEl) {
       domEl.style.display = "none";
@@ -19,23 +24,24 @@ export default function DropDown({ children, dropdown }: Props) {
 
   useEffect(() => {
     const div = document.createElement("div");
-    div.className = "dropdown__fallback";
+    div.className = "dropdown__fallback " + dropdownFallbackClassName;
 
     document.querySelector("body")?.appendChild(div);
 
-    div.onclick = function () {
+    div.onclick = () => {
       handleClose();
     };
 
     return () => {
       const domEl = document.querySelector(
-        ".dropdown__fallback"
+        "." + dropdownFallbackClassName
       ) as HTMLElement;
 
       if (domEl) {
-        document.querySelector("body")?.removeChild(div);
+        document.querySelector("body")?.removeChild(domEl);
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -44,7 +50,7 @@ export default function DropDown({ children, dropdown }: Props) {
         onClick={() => {
           setIsOpenCartDropdown(true);
           const domEl = document.querySelector(
-            ".dropdown__fallback"
+            "." + dropdownFallbackClassName
           ) as HTMLElement;
 
           if (domEl) {
