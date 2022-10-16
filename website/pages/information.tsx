@@ -169,7 +169,7 @@ export default function Information() {
               người gửi.
             </div>
 
-            <div className="d-flex align-items-center justify-content-between position-fixed position-sm-relative bottom-0 start-0 w-100 w-sm-auto z-index-1000 mb-4">
+            <div className="d-flex align-items-center justify-content-between position-fixed position-sm-relative bottom-0 start-0 w-100 w-sm-auto z-index-1000 mb-sm-4">
               <button className="btn btn--outlined btn--sm w-100 w-sm-auto py-3 py-sm-1">
                 Tiếp tục mua sắm
               </button>
