@@ -11,7 +11,11 @@ export default function Card({ className, children, active, onClick }: Props) {
   return (
     <div
       onClick={onClick}
-      className={"card " + (className ?? "") + (active ? "card--active" : "")}
+      className={
+        "card " +
+        (className ? className + " " : " ") +
+        (active ? "card--active" : "")
+      }
     >
       {children ?? "Card"}
     </div>

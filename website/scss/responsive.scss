@@ -135,9 +135,21 @@
     width: 25% !important;
   }
 
+  .w-sm-48 {
+    width: 48% !important;
+  }
+
   .dropdown__overplay {
     width: 100%;
     max-width: 300px;
+  }
+
+  .position-sm-relative {
+    position: relative !important;
+  }
+
+  .w-sm-auto {
+    width: auto !important;
   }
 }
 

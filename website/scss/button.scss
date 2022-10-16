@@ -31,6 +31,18 @@
     }
   }
 
+  &--link {
+    background-color: transparent;
+    color: $primary-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent !important;
+      color: $primary-color !important;
+    }
+  }
+
   &--large {
     padding: 10px 10px;
   }

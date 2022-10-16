@@ -2,4 +2,47 @@
   border: 1px solid $border-color;
   outline: none;
   padding-left: 10px;
+  width: 100%;
+
+  &--default {
+    border-bottom: 2px solid $primary-color;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+  }
+
+  &--md {
+    padding: 5px 10px;
+  }
+
+  &__wrapper {
+    input {
+      border-bottom: 2px solid $primary-color;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: $primary-color;
+    }
+
+    select {
+      width: 100%;
+      padding: 5px 10px;
+      border-bottom: 2px solid $primary-color;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 5px 10px;
+      border: 2px solid $primary-color;
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import * as uuid from "uuid";
 
@@ -37,6 +38,7 @@ interface CartItem {
 
 export default function CartDropdown() {
   const [cartItems, setCartItems] = useState<CartItem[]>(fakeArr);
+  const { push } = useRouter();
 
   const handleRemoveItem = (id: string) => {
     setCartItems((old) => {
@@ -82,7 +84,10 @@ export default function CartDropdown() {
         <div>{cartItems.length > 0 ? "1,227,000 " : "0"}₫</div>
       </div>
 
-      <button className="btn btn--primary btn--sm d-block mx-auto">
+      <button
+        onClick={() => push("/information")}
+        className="btn btn--primary btn--sm d-block mx-auto"
+      >
         Thanh toán
         <i className="fa-solid fa-cart-shopping ml-3 d-inline-block"></i>
       </button>
