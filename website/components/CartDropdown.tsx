@@ -113,7 +113,7 @@ const CartDropdownItem = ({
       </div>
       <i
         onClick={() => onRemove(key)}
-        className="fa-solid fa-xmark position-absolute"
+        className="fa-solid fa-xmark position-absolute large"
         style={{ top: 5, right: 5 }}
       ></i>
     </div>

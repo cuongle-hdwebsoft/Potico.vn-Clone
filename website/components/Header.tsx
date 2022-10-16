@@ -118,17 +118,20 @@ export default function Header() {
                   <a href="">Sản phẩm khác</a>
                 </Link>
               </li>
-              <li className="close d-block d-xl-none">
-                <i onClick={() => setIsOpen(false)} className="fa fa-close"></i>
+              <li className="close d-block d-xl-none ">
+                <i
+                  onClick={() => setIsOpen(false)}
+                  className="fa-solid fa-close large"
+                ></i>
               </li>
             </ul>
             <div className="header__group-icon">
-              <i className="fa-solid fa-house header__icon"></i>
+              <i className="fa-solid fa-magnifying-glass header__icon d-inline-block large"></i>
               <DropDown dropdown={<CartDropdown></CartDropdown>}>
                 <i className="fa-solid fa-cart-shopping header__icon"></i>
               </DropDown>
               <i
-                className="fa fa-bars header__icon d-inline-block d-xl-none"
+                className="fa-solid fa-bars header__icon d-inline-block d-xl-none large"
                 onClick={() => setIsOpen(true)}
               ></i>
             </div>
