@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import CartDropdown from "./CartDropdown";
+import DropDown from "./DropDown";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -122,7 +124,9 @@ export default function Header() {
             </ul>
             <div className="header__group-icon">
               <i className="fa-solid fa-house header__icon"></i>
-              <i className="fa-solid fa-cart-shopping header__icon"></i>
+              <DropDown dropdown={<CartDropdown></CartDropdown>}>
+                <i className="fa-solid fa-cart-shopping header__icon"></i>
+              </DropDown>
               <i
                 className="fa fa-bars header__icon d-inline-block d-xl-none"
                 onClick={() => setIsOpen(true)}

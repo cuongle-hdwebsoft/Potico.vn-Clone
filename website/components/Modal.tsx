@@ -16,17 +16,6 @@ export default function Modal({
   onClose,
   width,
 }: Modal) {
-  const isRendered = useRef(false);
-
-  if (!isRendered.current) {
-    const div = document.createElement("div");
-    div.id = "#modal";
-
-    document.querySelector("body")?.appendChild(div);
-
-    isRendered.current = true;
-  }
-
   const domEl = document.getElementById("#modal");
 
   if (!domEl) return null;

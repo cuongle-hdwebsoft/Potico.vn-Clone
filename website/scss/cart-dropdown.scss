@@ -1,0 +1,27 @@
+.cart-dropdown {
+  h2 {
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid $border-color;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 10px;
+  }
+
+  &__item {
+    margin-bottom: 5px;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 5px;
+  }
+
+  &__title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+  }
+
+  &__img {
+    width: 50px;
+  }
+}

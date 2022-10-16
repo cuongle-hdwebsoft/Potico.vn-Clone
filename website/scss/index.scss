@@ -7,6 +7,7 @@ $primary-color: rgba(247, 159, 142);
 $text-white-color: #ffffff;
 $text-black-color: #111111;
 $text-gray-color: rgba(129, 138, 145);
+$font-size-icon-mobile: 15px;
 
 $border-color: #e5e7eb;
 
@@ -32,6 +33,8 @@ $border-color: #e5e7eb;
 @import "./description.scss";
 @import "./preview-item.scss";
 @import "./toast.scss";
+@import "./dropdown.scss";
+@import "./cart-dropdown.scss";
 
 * {
   padding: 0;

@@ -1,0 +1,35 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  // &:hover .dropdown__overplay {
+  //   display: block;
+  // }
+
+  &--active .dropdown__overplay {
+    display: block;
+  }
+
+  &__overplay {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid $border-color;
+    width: 350px;
+    padding: 5px 10px;
+    right: -3px;
+    top: 105%;
+    display: none;
+    z-index: 99;
+
+    &::before {
+      content: "";
+      border-width: 5px;
+      border-color: transparent transparent $primary-color transparent;
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      border-style: solid;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+  }
+}
