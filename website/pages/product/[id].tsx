@@ -10,6 +10,9 @@ import Alert from "../../components/Alert";
 import Card from "../../components/Card";
 import Collapse from "../../components/Collapse";
 import dynamic from "next/dynamic";
+import Description from "../../components/Description";
+import PreviewItem from "../../components/PreviewItem";
+import * as uuid from "uuid";
 
 const Modal = dynamic(() => import("../../components/Modal"), {
   ssr: false,
@@ -125,10 +128,10 @@ export default function ProductDetail() {
                 </div>
               </div>
 
-              <div className="description">
-                <div className="description__item">
-                  <div className="description__title">Giao đến:</div>
-                  <div className="description__content">
+              <Description>
+                <Description.Item>
+                  <Description.Title>Giao đến:</Description.Title>
+                  <Description.Content>
                     <div className="border-outside">
                       <select style={{ border: 0 }} className="select w-100">
                         <option>Hồ Chí Minh</option>
@@ -136,11 +139,12 @@ export default function ProductDetail() {
                         <option>Khác</option>
                       </select>
                     </div>
-                  </div>
-                </div>
-                <div className="description__item">
-                  <div className="description__title">Chọn biến thể</div>
-                  <div className="description__content">
+                  </Description.Content>
+                </Description.Item>
+
+                <Description.Item>
+                  <Description.Title>Chọn biến thể</Description.Title>
+                  <Description.Content>
                     <div className="d-flex gap-2">
                       <div className="variant-product-selection active">
                         <img src="/product-detail/1-small-1.jpg" alt="" />
@@ -151,11 +155,12 @@ export default function ProductDetail() {
                         <span>Cao cấp</span>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div className="description__item">
-                  <div className="description__title">Số lượng</div>
-                  <div className="description__content">
+                  </Description.Content>
+                </Description.Item>
+
+                <Description.Item>
+                  <Description.Title>Số lượng</Description.Title>
+                  <Description.Content>
                     <div className="d-flex">
                       <button
                         onClick={() =>
@@ -189,10 +194,11 @@ export default function ProductDetail() {
                         +
                       </button>
                     </div>
-                  </div>
-                </div>
-                <div className="description__item">
-                  <div className="description__title">Chọn thêm sản phẩm</div>
+                  </Description.Content>
+                </Description.Item>
+
+                <Description.Item>
+                  <Description.Title>Chọn thêm sản phẩm</Description.Title>
                   <div className="description__content">
                     <Tabs defaultActiveTabIndex={0}>
                       <Tabs.TabItem index={0} title="Tất cả">
@@ -213,33 +219,14 @@ export default function ProductDetail() {
                         >
                           {Array.from({ length: 11 }).map((item, index) => {
                             return (
-                              <div
-                                className="preview-item"
-                                key={`tab-item-image-0-${index}`}
-                              >
-                                <div className="preview-item__wrapper">
-                                  <div className="preview-item__title">
-                                    Product title
-                                  </div>
-                                  <img
-                                    className="preview-item__image"
-                                    style={{ width: "100%" }}
-                                    src={`/product-detail/accessories/tab0/${
-                                      index + 1
-                                    }.jpg `}
-                                    alt=""
-                                  />
-                                  <div className="preview-item__price">
-                                    19.000 đ
-                                  </div>
-                                  <div
-                                    className="preview-item__more-info"
-                                    onClick={() => setIsOpenMoreInfoModal(true)}
-                                  >
-                                    <i className="fa-solid fa-circle-info"></i>
-                                  </div>
-                                </div>
-                              </div>
+                              <PreviewItem
+                                id={index}
+                                key={uuid.v4()}
+                                tab={0}
+                                onClickMoreInfo={(id) =>
+                                  setIsOpenMoreInfoModal(true)
+                                }
+                              ></PreviewItem>
                             );
                           })}
                         </Slider>
@@ -491,8 +478,10 @@ export default function ProductDetail() {
                       </Tabs.TabItem>
                     </Tabs>
                   </div>
-                </div>
-              </div>
+                </Description.Item>
+              </Description>
+
+              <div className="description"></div>
 
               <Alert
                 description={

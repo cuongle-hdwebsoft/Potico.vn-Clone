@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as uuid from "uuid";
 
 interface Collapse {
   children: JSX.Element[];
@@ -12,7 +13,7 @@ export default function Collapse({ children }: Collapse) {
         item?.type?.name === "CollapseItem") ||
       process.env.NODE_ENV === "production"
     ) {
-      return React.cloneElement(item, { activeIndex, index });
+      return React.cloneElement(item, { activeIndex, index, key: uuid.v4() });
     } else {
       return "";
     }

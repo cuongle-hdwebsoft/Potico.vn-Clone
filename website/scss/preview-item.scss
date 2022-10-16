@@ -1,0 +1,50 @@
+.preview-item {
+  &__wrapper {
+    cursor: pointer;
+    position: relative;
+    margin: 10px;
+    border: 1px solid $border-color;
+    padding: 10px;
+    transition: 0.3s ease all;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 117px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__title {
+    color: $primary-color;
+    width: 80px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    display: block;
+    margin: auto;
+  }
+
+  &__price {
+    color: $text-gray-color;
+    text-align: center;
+  }
+
+  &__more-info {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    background-color: $primary-color;
+    color: #fff;
+    font-size: 13px;
+
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
