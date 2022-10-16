@@ -17,7 +17,7 @@ export default function DropDown({ children, dropdown }: Props) {
         {children}
       </div>
       <div className="dropdown__overplay vw-100">
-        {dropdown}{" "}
+        {dropdown}
         <i
           onClick={() => setIsOpenCartDropdown(false)}
           className="fa-solid fa-xmark position-absolute"
