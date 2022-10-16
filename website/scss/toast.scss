@@ -1,0 +1,45 @@
+.toast-component {
+  width: 100%;
+  background-color: $primary-color;
+  color: #fff;
+  padding: 20px 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border-radius: 4px 0px 0px 4px;
+  position: relative;
+  animation: 0.3s ease animationOut 0s 1 both;
+
+  &__title {
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  .fa-sharp.fa-solid {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 13px;
+  }
+}
+
+#toast__wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: auto;
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes animationOut {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: 0;
+  }
+}

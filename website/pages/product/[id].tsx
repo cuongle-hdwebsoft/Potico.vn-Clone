@@ -13,6 +13,7 @@ import dynamic from "next/dynamic";
 import Description from "../../components/Description";
 import PreviewItem from "../../components/PreviewItem";
 import * as uuid from "uuid";
+import useToast from "../../hooks/useToast";
 
 const Modal = dynamic(() => import("../../components/Modal"), {
   ssr: false,
@@ -23,6 +24,15 @@ export default function ProductDetail() {
   const [amount, setAmount] = useState<string>("1");
   const [activeHour, setActiveHour] = useState(0);
   const [isOpenMoreInfoModal, setIsOpenMoreInfoModal] = useState(false);
+  const { handleCreateToast } = useToast();
+
+  const handleAddToCart = () => {
+    handleCreateToast({
+      title: "",
+      content: "Bỏ vào giỏ hàng thành công",
+      type: "success",
+    });
+  };
 
   return (
     <MainLayout>
@@ -598,7 +608,10 @@ export default function ProductDetail() {
                 <span>449,000 ₫</span>
               </p>
 
-              <button className="btn btn--primary btn--outlined btn--large me-2 w-oxs-100 mb-2 mb-sm-0">
+              <button
+                onClick={handleAddToCart}
+                className="btn btn--primary btn--outlined btn--large me-2 w-oxs-100 mb-2 mb-sm-0"
+              >
                 Thêm vào giỏ hàng
               </button>
               <button className="btn btn--primary btn--large w-oxs-100">

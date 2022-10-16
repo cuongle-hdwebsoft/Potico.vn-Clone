@@ -16,6 +16,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <div id="toast__wrapper"></div>
       </body>
     </Html>
   );
