@@ -19,7 +19,7 @@
     right: -3px;
     top: 105%;
     display: none;
-    z-index: 99;
+    z-index: 9999;
 
     &::before {
       content: "";
@@ -31,5 +31,19 @@
       border-style: solid;
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
+  }
+
+  &--active .dropdown__fallback {
+    display: block;
+  }
+
+  &__fallback {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
   }
 }
