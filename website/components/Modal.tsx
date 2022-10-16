@@ -16,7 +16,7 @@ export default function Modal({
   onClose,
   width,
 }: Modal) {
-  const domEl = document.getElementById("#modal");
+  const domEl = document.getElementById("modal");
 
   if (!domEl) return null;
 
