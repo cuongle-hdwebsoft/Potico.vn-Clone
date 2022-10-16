@@ -1,5 +1,6 @@
 ## Code convert image url to image file
 
+console tab in browser
 ```js
 const arr = []
 document.querySelectorAll('article').forEach(item => {
