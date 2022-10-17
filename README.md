@@ -32,11 +32,11 @@ Thanh toán
 
 ## Responsive
 
-![alt](/website/docs/1.gif)
+<!-- ![alt](/website/docs/1.gif)
 
 ![alt](/website/docs/2.gif)
 
-![alt](/website/docs/3.gif)
+![alt](/website/docs/3.gif) -->
 
 ![alt](/website/docs/4.gif)
 

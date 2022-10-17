@@ -32,11 +32,11 @@ Thanh toán
 
 ## Responsive
 
-![Ảnh 1](./docs/1.gif)
+<!-- ![Ảnh 1](./docs/1.gif)
 
 ![Ảnh 2](./docs/2.gif)
 
-![Ảnh 3](./docs/3.gif)
+![Ảnh 3](./docs/3.gif) -->
 
 ![Ảnh 4](./docs/4.gif)
 
