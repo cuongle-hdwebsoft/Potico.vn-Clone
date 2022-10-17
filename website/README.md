@@ -45,3 +45,9 @@ Thanh toán
 - Hiển thị giao diện
 
 - Responsive
+
+- Bootstrap
+
+- SCSS
+
+- NextJS
