@@ -24,7 +24,7 @@ export default function Collapse({ children }: Collapse) {
 
 interface CollapseItem {
   children: string | number | boolean | JSX.Element | JSX.Element[];
-  title?: string;
+  title?: string | JSX.Element;
   activeIndex?: number;
   index?: number;
 }

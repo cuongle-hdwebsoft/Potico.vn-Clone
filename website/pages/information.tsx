@@ -1,10 +1,13 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import Card from "../components/Card";
 import Input from "../components/Input";
 import MainLayout from "../components/MainLayout";
 
 export default function Information() {
+  const { push } = useRouter();
+
   return (
     <MainLayout>
       <div className="container mt-5">
@@ -173,7 +176,10 @@ export default function Information() {
               <button className="btn btn--outlined btn--sm w-100 w-sm-auto py-3 py-sm-1">
                 Tiếp tục mua sắm
               </button>
-              <button className="btn btn--primary btn--sm w-100 w-sm-auto py-3 py-sm-1">
+              <button
+                onClick={() => push("/payment")}
+                className="btn btn--primary btn--sm w-100 w-sm-auto py-3 py-sm-1"
+              >
                 ĐI ĐẾN THANH TOÁN
               </button>
             </div>
