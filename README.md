@@ -8,33 +8,33 @@ Potico là trang shop bán hoa, nếu bạn có cơ hội hãy ủng hộ shop n
 
 Trang chủ
 
-![alt](./docs/1.png)
+![alt](/website/docs/1.png)
 
 Chi tiết sản phẩm
 
-![image](./docs/2.png)
+![image](/website/docs/2.png)
 
 Campaign
 
-![alt](./docs/3.png)
+![alt](/website/docs/3.png)
 
 Thông tin đơn hàng
 
-![alt](./docs/4.png)
+![alt](/website/docs/4.png)
 
 Thanh toán
 
-![alt](./docs/5.png)
+![alt](/website/docs/5.png)
 
 ## Responsive
 
-![alt](./docs/1.gif)
+![alt](/website/docs/1.gif)
 
-![alt](./docs/2.gif)
+![alt](/website/docs/2.gif)
 
-![alt](./docs/3.gif)
+![alt](/website/docs/3.gif)
 
-![alt](./docs/4.gif)
+![alt](/website/docs/4.gif)
 
 ## Tính năng
 
